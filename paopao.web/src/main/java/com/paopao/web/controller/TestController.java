@@ -1,4 +1,4 @@
-package com.paopao.web;
+package com.paopao.web.controller;
 
 import com.paopao.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
