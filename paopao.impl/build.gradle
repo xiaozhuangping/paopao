@@ -11,5 +11,6 @@ dependencies {
     compile project(':paopao.sql')
     compile project(':paopao.service')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-redis')
     compile group: 'com.caucho', name: 'hessian', version: '4.0.7'
 }

@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -14,6 +16,8 @@ public class Test01 {
 
     @Autowired
     PaoPaoSqlDao paoPaoSqlDao;
+    @Autowired
+    StringRedisTemplate redisTemplate;
 
     @Test
     public void testFind(){
@@ -21,5 +25,15 @@ public class Test01 {
         paoPaoSql.setAge(24);
         paoPaoSql.setName("sadwaw22");
         paoPaoSqlDao.save(paoPaoSql);
+    }
+
+    @Test
+    public void testRedis(){
+        ValueOperations<String, String> ops = redisTemplate.opsForValue();
+        String key = "spring.boot.redis.test";
+        if (!redisTemplate.hasKey(key)) {
+            ops.set(key, "foo");
+        }
+        System.out.println("Found key " + key + ", value=" + ops.get(key));
     }
 }
