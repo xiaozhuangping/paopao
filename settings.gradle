@@ -1,0 +1,6 @@
+rootProject.name = 'paopao'
+include 'paopao.sql'
+include 'paopao.impl'
+include 'paopao.service'
+include 'paopao.web'
+

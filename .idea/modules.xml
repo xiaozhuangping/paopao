@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.impl.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.impl.iml" group="paopao.impl" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.impl/paopao.impl_main.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.impl/paopao.impl_main.iml" group="paopao.impl" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.impl/paopao.impl_test.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.impl/paopao.impl_test.iml" group="paopao.impl" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.service/paopao.service.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.service/paopao.service.iml" group="paopao.service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.service/paopao.service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.service/paopao.service_main.iml" group="paopao.service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.service/paopao.service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.service/paopao.service_test.iml" group="paopao.service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.sql.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.sql.iml" group="paopao.sql" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.sql/paopao.sql_main.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.sql/paopao.sql_main.iml" group="paopao.sql" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.sql/paopao.sql_test.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.sql/paopao.sql_test.iml" group="paopao.sql" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.web.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.web.iml" group="paopao.web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.web/paopao.web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.web/paopao.web_main.iml" group="paopao.web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paopao.web/paopao.web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/paopao.web/paopao.web_test.iml" group="paopao.web" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="paopao.impl_main" target="1.8" />
+      <module name="paopao.impl_test" target="1.8" />
+      <module name="paopao.service_main" target="1.8" />
+      <module name="paopao.service_test" target="1.8" />
+      <module name="paopao.sql_main" target="1.8" />
+      <module name="paopao.sql_test" target="1.8" />
+      <module name="paopao.web_main" target="1.8" />
+      <module name="paopao.web_test" target="1.8" />
+      <module name="paopao_main" target="1.8" />
+      <module name="paopao_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
