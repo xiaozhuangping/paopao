@@ -1,5 +1,5 @@
 import com.paopao.impl.PaoPaoImplApplication;
-import com.paopao.sql.dao.PaoPaoSql;
+import com.paopao.sql.vo.PaoPaoSql;
 import com.paopao.sql.dao.PaoPaoSqlDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;

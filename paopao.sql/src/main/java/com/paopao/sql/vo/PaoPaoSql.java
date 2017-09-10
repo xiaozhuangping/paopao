@@ -1,4 +1,4 @@
-package com.paopao.sql.dao;
+package com.paopao.sql.vo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

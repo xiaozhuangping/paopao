@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-@EntityScan("com.paopao.sql")
+@EntityScan("com.paopao.sql.vo")
 @EnableJpaRepositories(basePackages={"com.paopao.sql.dao"})
 @SpringBootApplication
 public class PaoPaoImplApplication {

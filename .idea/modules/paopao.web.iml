@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$/../../paopao.web">
       <excludeFolder url="file://$MODULE_DIR$/../../paopao.web/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../paopao.web/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../paopao.web/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
