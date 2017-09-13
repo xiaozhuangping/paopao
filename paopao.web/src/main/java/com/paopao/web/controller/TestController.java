@@ -4,6 +4,7 @@ import com.paopao.service.TestService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,18 +22,17 @@ public class TestController {
     @Autowired
     private TestService userService;
 
-    @RequestMapping("/index")
-    @ResponseBody
-    public Integer index() {
-        return 666;
-    }
-
     @RequestMapping("/login")
     public String login() {
         return "403";
     }
 
-    @RequiresPermissions("add")
+    @RequestMapping("/index")
+    public String home() {
+        return "home";
+    }
+
+    @RequiresRoles("123")
     @RequestMapping("/add")
     @ResponseBody
     public String add() {
@@ -78,6 +78,7 @@ public class TestController {
     @RequestMapping("/logout")
     @ResponseBody
     public String logout() {
+        logger.info("正在退出");
         //使用权限管理工具进行用户的退出，跳出登录，给出提示信息
         SecurityUtils.getSubject().logout();
         return "退出成功";

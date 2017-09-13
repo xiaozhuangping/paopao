@@ -7,6 +7,8 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -16,6 +18,7 @@ import java.util.Set;
 @Component
 public class MyShiroRealm extends AuthorizingRealm {
 
+    private static Logger logger = LoggerFactory.getLogger(MyShiroRealm.class);
     /**
      * 认证信息.(身份验证) : Authentication 是用来验证用户身份
      * @throws AuthenticationException
@@ -23,7 +26,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken authcToken) throws AuthenticationException {
-        System.out.println("身份认证方法：MyShiroRealm.doGetAuthenticationInfo()");
+        logger.info("身份认证方法：MyShiroRealm.doGetAuthenticationInfo()");
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
         Map<String, Object> map = new HashMap<>();
         map.put("userName", token.getUsername());
@@ -48,7 +51,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(
             PrincipalCollection principals) {
-        System.out.println("权限认证方法：MyShiroRealm.doGetAuthenticationInfo()");
+        logger.info("权限认证方法：MyShiroRealm.doGetAuthenticationInfo()");
         RmUserInfo token = (RmUserInfo) SecurityUtils.getSubject().getPrincipal();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         //根据用户ID查询角色（role），放入到Authorization里。

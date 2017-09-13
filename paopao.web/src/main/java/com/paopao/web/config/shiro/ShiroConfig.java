@@ -21,6 +21,7 @@ public class ShiroConfig {
 
 	private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
+
 	/**
 	 * Shiro的Web过滤器Factory 命名:shiroFilter<br /> * * @param securityManager * @return
 	 */
