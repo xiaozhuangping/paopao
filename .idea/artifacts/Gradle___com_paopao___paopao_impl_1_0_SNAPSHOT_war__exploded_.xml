@@ -85,6 +85,9 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-oxm:4.3.10.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:4.3.10.RELEASE" />
           <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="file-copy" path="D:/Program Files/gradle-3.5/caches/modules-2/files-2.1/ma.glasnost.orika/orika-core/1.4.1/ac5cd9c9c4e4b4817803fafec98336534969e73d/orika-core-1.4.1.jar" />
+          <element id="file-copy" path="D:/Program Files/gradle-3.5/caches/modules-2/files-2.1/com.thoughtworks.paranamer/paranamer/2.3/4a85963a752c0a2f715c3924bfc686865e7e1bc6/paranamer-2.3.jar" />
+          <element id="file-copy" path="D:/Program Files/gradle-3.5/caches/modules-2/files-2.1/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.2_jdk5/d49f4f513e7023ab567002e2a92eba29210ad87c/concurrentlinkedhashmap-lru-1.2_jdk5.jar" />
         </element>
       </element>
     </root>

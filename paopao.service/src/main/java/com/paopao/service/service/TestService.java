@@ -1,4 +1,4 @@
-package com.paopao.service;
+package com.paopao.service.service;
 
 import java.util.List;
 

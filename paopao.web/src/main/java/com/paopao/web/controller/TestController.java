@@ -1,6 +1,8 @@
 package com.paopao.web.controller;
 
-import com.paopao.service.TestService;
+import com.paopao.service.service.TestService;
+import com.paopao.service.service.UserInfoService;
+import com.paopao.service.vo.UserInfoVo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -21,6 +23,8 @@ public class TestController {
 
     @Autowired
     private TestService userService;
+    @Autowired
+    private UserInfoService userInfoService;
 
     @RequestMapping("/login")
     public String login() {
@@ -32,11 +36,12 @@ public class TestController {
         return "home";
     }
 
-    @RequiresRoles("123")
+    @RequiresPermissions("用户管理")
     @RequestMapping("/add")
     @ResponseBody
-    public String add() {
-        return "添加";
+    public UserInfoVo add() {
+        UserInfoVo userInfoVo = userInfoService.findUserInfoById(1);
+        return userInfoVo;
     }
 
     @RequestMapping("/loginBy/{name}/{pwd}")
