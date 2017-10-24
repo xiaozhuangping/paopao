@@ -21,9 +21,6 @@ public class ShiroConfig {
 
 	private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
-	/**
-	 * Shiro的Web过滤器Factory 命名:shiroFilter<br /> * * @param securityManager * @return
-	 */
 	@Bean
 	public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
 		logger.info("注入Shiro的Web过滤器-->shiroFilter", ShiroFilterFactoryBean.class);
@@ -47,6 +44,7 @@ public class ShiroConfig {
 		// <!-- 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
 		// <!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
 		filterChainDefinitionMap.put("/login", "anon");//anon 可以理解为不拦截
+		filterChainDefinitionMap.put("/api/**", "anon");//anon 可以理解为不拦截
 		filterChainDefinitionMap.put("/loginBy/**", "anon");
 		filterChainDefinitionMap.put("/**", "authc");
 

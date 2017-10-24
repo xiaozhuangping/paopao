@@ -1,17 +1,25 @@
 package com.paopao.web.controller;
 
-import com.paopao.service.TestService;
+import com.paopao.service.service.TestService;
+import com.paopao.service.service.UserInfoService;
+import com.paopao.service.vo.UserInfoVo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class TestController {
@@ -20,23 +28,25 @@ public class TestController {
 
     @Autowired
     private TestService userService;
-
-    @RequestMapping("/index")
-    @ResponseBody
-    public Integer index() {
-        return 666;
-    }
+    @Autowired
+    private UserInfoService userInfoService;
 
     @RequestMapping("/login")
     public String login() {
         return "403";
     }
 
-    @RequiresPermissions("add")
+    @RequestMapping("/index")
+    public String home() {
+        return "home";
+    }
+
+    @RequiresPermissions("用户管理")
     @RequestMapping("/add")
     @ResponseBody
-    public String add() {
-        return "添加";
+    public UserInfoVo add() {
+        UserInfoVo userInfoVo = userInfoService.findUserInfoById(1);
+        return userInfoVo;
     }
 
     @RequestMapping("/loginBy/{name}/{pwd}")
@@ -78,9 +88,29 @@ public class TestController {
     @RequestMapping("/logout")
     @ResponseBody
     public String logout() {
+        logger.info("正在退出");
         //使用权限管理工具进行用户的退出，跳出登录，给出提示信息
         SecurityUtils.getSubject().logout();
         return "退出成功";
+    }
+
+    @RequestMapping("/api/uploadFile")
+    @ResponseBody
+    public Map uploadFile(MultipartFile multipartFile,String user, HttpSession session){
+        Map map = new HashMap();
+        logger.info(user+"文件名称：");
+        String filePath = session.getServletContext().getRealPath("/images");
+        File file = new File(filePath,multipartFile.getOriginalFilename());
+        if (file.getParentFile().exists()){
+            file.getParentFile().mkdirs();
+        }
+        try {
+            multipartFile.transferTo(file);
+            map.put("data",true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
